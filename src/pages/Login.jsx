@@ -1,7 +1,6 @@
-// src/pages/Login.jsx
 import React, { useState, useEffect, useContext, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Client, Account } from 'appwrite';
+import { account } from '../appwrite/Appwrite.js'; // ✅ shared Appwrite instance
 import { AuthContext } from '../context/AuthContext';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { motion } from 'framer-motion';
@@ -9,10 +8,6 @@ import Lottie from 'lottie-react';
 import loginAnimation from '../assets/login-animation.json';
 import * as THREE from 'three';
 import NET from 'vanta/dist/vanta.net.min';
-
-const client = new Client();
-client.setEndpoint('https://cloud.appwrite.io/v1').setProject('687f1bd4000c59f4555b');
-const account = new Account(client);
 
 const ADMIN_EMAIL = 'saurabhaasharma@gmail.com';
 
