@@ -16,6 +16,7 @@
     "react-dom": "^18.2.0",
     "react-google-recaptcha": "^3.1.0",
     "react-hot-toast": "^2.5.2",
+    "react-parallax-tilt": "^1.7.304",
     "react-router-dom": "^6.11.2",
     "react-scripts": "5.0.1",
     "recharts": "^3.1.0",
