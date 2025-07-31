@@ -1,4 +1,4 @@
-import { Client, Account, Databases, ID } from 'appwrite';
+import { Client, Account, Databases, ID, Query } from 'appwrite';
 
 const client = new Client();
 client.setEndpoint('https://cloud.appwrite.io/v1').setProject('687f1bd4000c59f4555b');
@@ -6,4 +6,4 @@ client.setEndpoint('https://cloud.appwrite.io/v1').setProject('687f1bd4000c59f45
 const account = new Account(client);
 const database = new Databases(client); // ✅ singular name
 
-export { account, database, ID  }; // ✅ export correctly
+export { account, database, ID, Query }; // ✅ export correctly

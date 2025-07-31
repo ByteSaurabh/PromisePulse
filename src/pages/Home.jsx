@@ -34,7 +34,7 @@ const features = [
   {
     title: "🧑‍💼 Reviews",
     description: "Leave feedback on promises.",
-    path: "/admin",
+    path: "/reviews",
   },
 ];
 

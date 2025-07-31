@@ -16,6 +16,9 @@ import AdminAllPromises from './pages/AdminAllPromises';
 import AdminUsers from './pages/AdminUsers';
 import Profile from './pages/Profile';
 import UserDashboard from './pages/UserDashboard';
+import Results from './pages/Results';
+import MyAchievements from './pages/MyAchievements';
+import Reviews from './pages/Reviews';
 import Footer from './components/Footer';
 
 
@@ -108,7 +111,23 @@ function App() {
 
 <Route path="/user-dashboard" element={<UserDashboard />} />
 
+<Route path="/results" element={
+  <ProtectedRoute>
+    <Results />
+  </ProtectedRoute>
+} />
 
+<Route path="/badges" element={
+  <ProtectedRoute>
+    <MyAchievements />
+  </ProtectedRoute>
+} />
+
+<Route path="/reviews" element={
+  <ProtectedRoute>
+    <Reviews />
+  </ProtectedRoute>
+} />
 
 
       </Routes>

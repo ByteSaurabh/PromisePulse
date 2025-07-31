@@ -7,6 +7,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "appwrite": "^11.0.0",
+    "date-fns": "^4.1.0",
     "file-saver": "^2.0.5",
     "framer-motion": "^12.23.12",
     "lottie-react": "^2.4.1",
