@@ -28,10 +28,16 @@ const features = [
     path: "/user-dashboard",
   },
   {
-    title: "🧑‍💼 Admin Panel",
-    description: "Moderate content, view analytics and manage users.",
+  title: "🏅 My Achievements",
+  description: "Unlock badges as you track and fulfill promises.",
+  path: "/badges",
+},
+  {
+    title: "🧑‍💼 Reviews",
+    description: "Leave feedback on promises.",
     path: "/admin",
   },
+  
 ];
 
 const Home = () => {
