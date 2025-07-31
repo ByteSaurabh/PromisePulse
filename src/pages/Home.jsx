@@ -1,10 +1,9 @@
-// src/pages/Home.jsx
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom"; // ✅ Use Link instead of navigate()
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
 import Lottie from "lottie-react";
-import heroAnimation from "../assets/heroAnimation.json"; // Ensure this exists or replace with correct path
+import heroAnimation from "../assets/heroAnimation.json";
 
 const features = [
   {
@@ -28,25 +27,22 @@ const features = [
     path: "/user-dashboard",
   },
   {
-  title: "🏅 My Achievements",
-  description: "Unlock badges as you track and fulfill promises.",
-  path: "/badges",
-},
+    title: "🏅 My Achievements",
+    description: "Unlock badges as you track and fulfill promises.",
+    path: "/badges",
+  },
   {
     title: "🧑‍💼 Reviews",
     description: "Leave feedback on promises.",
     path: "/admin",
   },
-  
 ];
 
 const Home = () => {
-  const navigate = useNavigate();
-
   return (
     <div className="min-h-screen bg-gradient-to-tr from-[#e0eafc] to-[#cfdef3] dark:from-[#1e1e2f] dark:to-[#2e2e45] text-gray-800 dark:text-white">
       <div className="max-w-7xl mx-auto px-4 py-12">
-        {/* Lottie Animation */}
+        {/* Hero Animation */}
         <div className="flex justify-center mb-4">
           <Lottie animationData={heroAnimation} loop className="w-72 h-72" />
         </div>
@@ -70,31 +66,31 @@ const Home = () => {
           polls, and holding leaders accountable. Let's build transparency together.
         </motion.p>
 
-        {/* Feature Cards with 3D Tilt + Glassmorphism */}
+        {/* Feature Cards */}
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
           {features.map((feature) => (
-            <Tilt
-              key={feature.title}
-              glareEnable={true}
-              glareMaxOpacity={0.2}
-              glareColor="#ffffff"
-              glarePosition="all"
-              scale={1.04}
-              tiltMaxAngleX={15}
-              tiltMaxAngleY={15}
-              className="bg-white/10 dark:bg-white/5 backdrop-blur-lg rounded-xl border border-white/20 dark:border-white/10 p-6 cursor-pointer transition-all hover:shadow-2xl hover:scale-[1.05]"
-              onClick={() => navigate(feature.path)}
-            >
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
+            <Link to={feature.path} key={feature.title} className="block group">
+              <Tilt
+                glareEnable={true}
+                glareMaxOpacity={0.2}
+                glareColor="#ffffff"
+                glarePosition="all"
+                scale={1.04}
+                tiltMaxAngleX={15}
+                tiltMaxAngleY={15}
+                className="bg-white/10 dark:bg-white/5 backdrop-blur-lg rounded-xl border border-white/20 dark:border-white/10 p-6 transition-all hover:shadow-2xl group-hover:scale-[1.05]"
               >
-                <h2 className="text-xl font-semibold mb-2">{feature.title}</h2>
-                <p className="text-sm text-gray-700 dark:text-gray-300">
-                  {feature.description}
-                </p>
-              </motion.div>
-            </Tilt>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <h2 className="text-xl font-semibold mb-2">{feature.title}</h2>
+                  <p className="text-sm text-gray-700 dark:text-gray-300">
+                    {feature.description}
+                  </p>
+                </motion.div>
+              </Tilt>
+            </Link>
           ))}
         </div>
       </div>
